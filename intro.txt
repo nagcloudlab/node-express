@@ -47,6 +47,9 @@ What is Node.js ?
 Why Node.js ?
 
 -> non-blocking I/O runtime
+-> Event-driven programming model
+
+-----------------------------------------------
 
 Why should we use Node.js ?
 
