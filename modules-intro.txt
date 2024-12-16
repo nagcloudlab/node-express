@@ -1,0 +1,52 @@
+
+
+
+
+commonjs ( cjs )  module standard
+-------------------------------------
+
+Rules:
+
+1. Every file is a module
+2. All variables are local (private) to the module
+3. Variables can be exported ( public ) using 'module.exports' object
+4. Variables can be imported using 'require' function
+5. group related modules in a folder/package 
+
+Node.js uses commonjs module standard as default module system
+
+
+
+-------------------------------------
+
+NPM ( Node Package Manager )
+
+- cli tool to manage javascript packages
+- npmjs.com is the registry of javascript packages ( private and public )
+- npm install <package-name> : install a package
+- npm publish : publish a package
+
+-------------------------------------
+
+// in 2015, ES6 introduced new module standard called 'ES6 modules' or 'ES modules'
+
+Rules:
+
+1. Every file is a module
+2. All variables are local (private) to the module
+3. Variables can be exported ( public ) using 'export' keyword
+4. Variables can be imported using 'import' keyword
+
+
+-------------------------------------
+
+// Typescript also supports ES6 modules
+
+to compile Typescript 
+
+    - tsc
+    - ts-node
+    - ts-node-dev
+
+
+-------------------------------------
