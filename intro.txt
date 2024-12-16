@@ -1,11 +1,12 @@
 
-
+-----------------------------------------------
 
 why javascript ?
 
 -> single-threaded process
 -> with non-blocking I/O, we can do multiple things at once
 
+-----------------------------------------------
 
 How to run javascript ?
 
@@ -44,19 +45,12 @@ What is Node.js ?
 
 => javascript runtime built on chrome's v8 javascript engine
 
+-----------------------------------------------
+
 Why Node.js ?
 
 -> non-blocking I/O runtime
 -> Event-driven programming model
-
------------------------------------------------
-
-Why should we use Node.js ?
-
--> IO intensive operations ( read / write fs, network, db )
--> Computation intensive operations 
-    -> not recommended
-    but with worker-threads & clustering  we can do
 
 -----------------------------------------------
 How Node.js works behind ?
@@ -76,3 +70,10 @@ Node.js Architecture
 
 -----------------------------------------------
      
+Node.js Http-server
+
+    -> will handle http-requests as events
+    -> execute eevry IO operation as non-blocking
+    -> file reating static files, use streaming IO with back-pressure
+
+-----------------------------------------------    
