@@ -1,6 +1,8 @@
 
+Notion-page:
+https://nagcloudlab.notion.site/Node-js-with-Express-js-8f60dff03ba74a3889c48ff112913ddf?pvs=4
 
 
-
+Event_loop:
 http://latentflip.com/loupe
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop
