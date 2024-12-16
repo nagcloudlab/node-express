@@ -1,0 +1,75 @@
+
+
+
+why javascript ?
+
+-> single-threaded process
+-> with non-blocking I/O, we can do multiple things at once
+
+
+How to run javascript ?
+
+-> using javascript-engine / interpreter
+
+Browser envi
+
+-> chrome - v8 ( c++ )
+-> firefox - rhino ( java ) -> spidermonkey ( c++ )
+-> safari - nitro ( c++ )
+-> edge - chakra ( c++ )
+
+Other envi
+
+-> nodejs - v8 ( c++ )   => our focus
+-> JVM - nashorn ( java )
+-> python - pyv8 ( c++ )
+
+-----------------------------------------------
+
+What kind of applications can be built using javascript ?
+
+-> web-apps -> browser
+-> mobile-apps -> react-native, ionic, phonegap
+-> desktop-apps -> electron
+-> server-apps -> nodejs  => our focus
+
+-----------------------------------------------
+
+javascript is a loosely-typed language
+typescript is a strongly-typed language => our focus
+
+-----------------------------------------------
+
+What is Node.js ?
+
+=> javascript runtime built on chrome's v8 javascript engine
+
+Why Node.js ?
+
+-> non-blocking I/O runtime
+
+Why should we use Node.js ?
+
+-> IO intensive operations ( read / write fs, network, db )
+-> Computation intensive operations 
+    -> not recommended
+    but with worker-threads & clustering  we can do
+
+-----------------------------------------------
+How Node.js works behind ?
+-----------------------------------------------
+
+Node.js Architecture
+ -> javascript-engine ( v8 )
+     -> single-call-stack -> to execute the code
+     -> heap -> to keep objects
+ -> Node-APIs
+     -> to interact with OS
+     -> to interact with file-system
+     -> to interact with network
+     -> to interact with child-process    
+ -> Event/Callback/Message Queue 
+ -> Event Loop 
+
+-----------------------------------------------
+     
