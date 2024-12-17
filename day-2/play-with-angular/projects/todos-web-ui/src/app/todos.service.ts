@@ -16,7 +16,7 @@ export class TodosService {
   }
 
   add(todo: any): Observable<any> {
-    todo.completed = false;
+    todo.completed = 0;
     return this.httpClient.post(this.apiUrl, todo);
   }
 

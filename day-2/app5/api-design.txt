@@ -1,0 +1,95 @@
+
+
+-----------------------
+REST api design
+-----------------------
+
+1. know the resources
+
+    - todos
+    - users
+
+
+2. know the relationships
+
+    - todos belong to users
+    - users have many todos
+
+3. know the actions
+
+    - get all todos
+    - get a todo
+    - create a todo
+    - update a todo
+    - delete a todo
+
+    - get all users
+    - get a user
+    - create a user
+    - update a user
+    - delete a user
+
+4. know the endpoints
+
+    - /todos
+    - /todos/:id
+    - /users
+    - /users/:id
+    - /users/:id/todos
+    - /users/:id/todos/:id
+
+5. know the HTTP methods
+
+
+    - read
+        - GET /todos
+        - GET /todos/:id
+        - GET /users
+        - GET /users/:id
+        - GET /users/:id/todos
+        - GET /users/:id/todos/:id
+        - HEAD /todos/:id // get meta data
+
+    - write
+        - POST /todos
+        - PUT /todos/:id // update
+        - PATCH /todos/:id // partial update
+        - DELETE /todos/:id
+
+        - POST /users
+        - PUT /users/:id
+        - DELETE /users/:id
+
+6. know the status codes
+
+    - 200 OK
+    - 201 Created
+    - 204 No Content
+    - 400 Bad Request
+    - 401 Unauthorized
+    - 403 Forbidden
+    - 404 Not Found
+    - 405 Method Not Allowed
+    - 409 Conflict
+    - 500 Internal Server Error
+
+7. know the request and response format
+
+    - request
+        - headers
+        - body
+        - query params
+        - path params
+
+    - response
+        - headers
+        - body
+        - status code
+
+    - body
+        - JSON ( most common )
+        - XML
+        - HTML
+        - plain text
+
+---------------------------------------------------
