@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-6">
+        <h2>Todo List</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Completed</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each todos as |todo|}}
+                <tr>
+                    <td>{{todo.id}}</td>
+                    <td>{{todo.title}}</td>
+                    <td>{{todo.completed}}</td>
+                    <td>
+                        <a class="btn btn-danger btn-sm" href="/todos/delete/{{todo.id}}">Delete</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
