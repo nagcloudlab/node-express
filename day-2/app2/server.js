@@ -1,5 +1,10 @@
 
 const express = require('express');
+const logger = require('./middlewares/logger');
+const morgan = require('morgan');
+
+const todosRouter = require('./routes/todos');
+const usersRouter = require('./routes/users');
 
 const app = express();
 
@@ -86,8 +91,24 @@ const app = express();
 // });
 
 
+
+// app.use(logger);
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 app.use(express.static('public'));
 
+app.param('id', (req, res, next, id) => {
+    req.id = parseInt(id);
+    next();
+});
+
+app.use('/todos', todosRouter);
+app.use('/users', usersRouter);
+
+// error handler
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send(`Something broke! ${err.message}`);
+});
 
 
 app.listen(4000, () => {
