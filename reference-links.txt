@@ -11,3 +11,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Event_loop
 REST API:
 https://en.wikipedia.org/wiki/REST
 
+
+
+Passport.js:
+https://www.passportjs.org/

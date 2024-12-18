@@ -1,4 +1,4 @@
-const socket = io();
+const socket = io(); // Connect to the server
 
 // Handle form submission
 const form = document.getElementById('message-form');
