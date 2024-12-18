@@ -6,17 +6,36 @@ var router = express.Router();
 const uri = "mongodb://localhost:27017";
 const client = new MongoClient(uri);
 
+const { createClient } = require('redis');
+let redisClient = null;
+
+(async () => {
+  redisClient = await createClient()
+    .on('error', err => console.log('Redis Client Error', err))
+    .connect();
+})()
+
 router
   .get('/', async function (req, res, next) {
     try {
-      const database = client.db('shop-db');
-      const products = database.collection('products');
-      const cursor = await products.find(); // Non-blocking operation
-      let productsList = [];
-      await cursor.forEach(product => {
-        productsList.push(product);
-      });
-      res.send(productsList);
+
+      // Check if the data is in the cache
+      const cachedProducts = await redisClient.get('products')
+      console.log(cachedProducts);
+      if (cachedProducts) {
+        res.send(JSON.parse(cachedProducts));
+      } else {
+        const database = client.db('shop-db');
+        const products = database.collection('products');
+        const cursor = await products.find();
+        let productsList = [];
+        await cursor.forEach(product => {
+          productsList.push(product);
+        });
+        redisClient.set('products', JSON.stringify(productsList));
+        redisClient.expire('products', 10);
+        res.send(productsList);
+      }
 
     } finally {
       // Ensures that the client will close when you finish/error
@@ -37,7 +56,7 @@ router
       // await client.close();
     }
   })
-  .post('/:id/reviews', async function (req, res, next) {
+  .post('/:id/reviews', express.json(), async function (req, res, next) {
     try {
       const database = client.db('shop-db');
       const reviews = database.collection('reviews');

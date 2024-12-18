@@ -27,6 +27,7 @@
                     <div *ngFor="let review of reviews">
                         <app-review [review]="review"></app-review>
                     </div>
+                    <app-review-form (onNewReview)="handleNewReview($event)"></app-review-form>
                 </div>
             </div>
         </div>
