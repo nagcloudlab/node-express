@@ -12,6 +12,10 @@ REST API:
 https://en.wikipedia.org/wiki/REST
 
 
-
 Passport.js:
 https://www.passportjs.org/
+
+
+Real-Time Communication:
+https://javascript.info/websocket
+https://socket.io/
